@@ -1,12 +1,12 @@
 <!-- index.html -->
 <!DOCTYPE html>
 
-<html>
-    <head>
+    <html>
         <title>Geometry Helper 📐</title>
         <link rel="icon" href="./images/favicon.png" sizes="any" type="image/png">
         <link rel="stylesheet" href="./style.css">
         <script src="./main.js" defer></script>
+        <title>Geometry Calculator</title>
     </head>
 
     <body>
@@ -15,7 +15,7 @@
              Geometry Helper 
             <img class="heading_img" src="./images/geometry.png" width="32px">
         </h1>
-
+        
         <h3>Use the tools below to help with your math!</h3>
         
         <p>
@@ -29,6 +29,56 @@
         <!-- Geometry -->
         <div>
             <h4>Part 1 - Geometry</h4>
+            <label for="a">a:</label>
+            <input id="a" name="a" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
+            <label for="b">b:</label>
+            <input id="b" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
+            <label for="c">c:</label>
+            <input id="c" type="number" value="1" placeholder="1" autocomplete="off" class="short_number">
+
+            <button id="zeros">Find the Zeros</button> 
+            <button id="vertex">Find the Vertex</button>
+            
+            <!-- Output for the zeros or vertex -->
+            <div id="quadratic_output"></div>
+        </div>
+        <h1>Geometry Calculator</h1>
+
+        <h2>Rectangular Prism</h2>
+        <label for="length">Length:</label>
+        <input type="number" id="length" required><br>
+        <label for="width">Width:</label>
+        <input type="number" id="width" required><br>
+        <label for="height">Height:</label>
+        <input type="number" id="height" required><br>
+        <button onclick="rect_prism_volume()">Rectangular Prism Volume</button>
+        <button onclick="rect_prism_area()">Rectangular Prism Area</button>
+        <p id="rect_prism_result"></p>
+    
+        <h2>Sphere</h2>
+        <label for="radius">Radius:</label>
+        <input type="number" id="radius" required><br>
+        <button onclick="sphere_volume()">Sphere Volume</button>
+        <button onclick="sphere_area()">Sphere Area</button>
+        <p id="sphere_result"></p>
+    
+        <h2>Line Segment</h2>
+        <label for="x1">Point 1 (x1):</label>
+        <input type="number" id="x1" required><br>
+        <label for="y1">Point 1 (y1):</label>
+        <input type="number" id="y1" required><br>
+        <label for="x2">Point 2 (x2):</label>
+        <input type="number" id="x2" required><br>
+        <label for="y2">Point 2 (y2):</label>
+        <input type="number" id="y2" required><br>
+        <button onclick="slope()">Slope</button>
+        <button onclick="length()">Length</button>
+        <button onclick="midpoint()">Midpoint</button>
+        <p id="line_result"></p>
+    
+        <h2>Rounding</h2>
+        <label for="decimals">Decimals for rounding:</label>
+        <input type="number" id="decimals" value="2" min="0"><br>
             
         </div>
         
@@ -40,22 +90,19 @@
             <p>
                 Enter the values of "a", "b", and "c" of a quadratic in standard form:
             </p>
-            
-            <label for="a">a:</label>
-            <input id="a" name="a" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
-            <label for="b">b:</label>
-            <input id="b" type="number" value="1" placeholder="1" autocomplete="off" class="short_number"> &nbsp;
-            <label for="c">c:</label>
-            <input id="c" type="number" value="1" placeholder="1" autocomplete="off" class="short_number">
+    <h1>Quadratic Formula Calculator</h1>
 
-            <button id="zeros">Find the Zeros</button> 
-            <button id="vertex">Find the Vertex</button>
-
-            <!-- Output for the zeros or vertex -->
-            <div id="quadratic_output"></div>
-        </div>
-
-        
-
+    <label for="a">Coefficient a:</label>
+    <input type="number" id="a" required><br>
+    <label for="b">Coefficient b:</label>
+    <input type="number" id="b" required><br>
+    <label for="c">Coefficient c:</label>
+    <input type="number" id="c" required><br>
+    <label for="rounding">Rounding (decimals):</label>
+    <input type="number" id="rounding" value="2" required><br>
+    <button onclick="findZeros()">Find the Zeros</button>
+    <button onclick="findVertex()">Find the Vertex</button>
+    <div id="quadratic_output"></div>
+ 
     </body>
 </html>
