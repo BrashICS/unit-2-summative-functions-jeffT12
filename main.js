@@ -129,3 +129,43 @@ function midpoint() {
     const results = calculateLineResults();
     document.getElementById('line_result').innerText = results.midpointResult;
 }
+
+
+function y_quad(a, b, c, x) {
+    return a * Math.pow(x, 2) + b * x + c;
+}
+
+function findZeros() {
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    const c = parseFloat(document.getElementById('c').value);
+    const rounding = parseInt(document.getElementById('rounding').value);
+
+    const discriminant = b * b - 4 * a * c;
+    let output;
+
+    if (discriminant < 0) {
+        output = "No real roots.";
+    } else {
+        const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        output = `Zeros: ${root1.toFixed(rounding)}, ${root2.toFixed(rounding)}`;
+    }
+
+    console.log(output);
+    document.getElementById('quadratic_output').innerText = output;
+}
+
+function findVertex() {
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    const c = parseFloat(document.getElementById('c').value);
+    const rounding = parseInt(document.getElementById('rounding').value);
+
+    const x_vertex = -b / (2 * a);
+    const y_vertex = y_quad(a, b, c, x_vertex);
+
+    const output = `Vertex: (${x_vertex.toFixed(rounding)}, ${y_vertex.toFixed(rounding)})`;
+    console.log(output);
+    document.getElementById('quadratic_output').innerText = output;
+}

@@ -90,7 +90,19 @@
             <p>
                 Enter the values of "a", "b", and "c" of a quadratic in standard form:
             </p>
-            
-        
+    <h1>Quadratic Formula Calculator</h1>
+
+    <label for="a">Coefficient a:</label>
+    <input type="number" id="a" required><br>
+    <label for="b">Coefficient b:</label>
+    <input type="number" id="b" required><br>
+    <label for="c">Coefficient c:</label>
+    <input type="number" id="c" required><br>
+    <label for="rounding">Rounding (decimals):</label>
+    <input type="number" id="rounding" value="2" required><br>
+    <button onclick="findZeros()">Find the Zeros</button>
+    <button onclick="findVertex()">Find the Vertex</button>
+    <div id="quadratic_output"></div>
+ 
     </body>
 </html>
